@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "question": "What is a closure in JavaScript?",
+    "answer": "A closure is a function that has access to its outer function scope even after the outer function has returned."
+  },
+  {
+    "id": 2,
+    "question": "Explain the difference between `let`, `const`, and `var`.",
+    "answer": "`var` is function-scoped, while `let` and `const` are block-scoped. `const` variables cannot be reassigned."
+  },
+  {
+    "id": 3,
+    "question": "What is 'this' keyword in JavaScript?",
+    "answer": "'this' refers to the object it belongs to. Its value depends on how a function is called (invocation context)."
+  }
+] 

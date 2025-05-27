@@ -1,20 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './screens/HomeScreen';
+import QuizScreen from './screens/QuizScreen';
+import { Platform, StatusBar } from 'react-native';
+
+// Define the parameter list for the stack navigator
+export type RootStackParamList = {
+  Home: undefined; // No parameters for HomeScreen
+  Quiz: { topicId: string; topicName: string; topicFile: string }; // Parameters for QuizScreen
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator 
+        initialRouteName="Home"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#007bff', // Blue header
+          },
+          headerTintColor: '#fff', // White header text
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      >
+        <Stack.Screen 
+          name="Home" 
+          component={HomeScreen} 
+          options={{ title: 'Flashcard Topics' }} 
+        />
+        <Stack.Screen 
+          name="Quiz" 
+          component={QuizScreen} 
+          // Title for QuizScreen is set dynamically in QuizScreen.tsx using navigation.setOptions
+        />
+      </Stack.Navigator>
+      <StatusBar barStyle={Platform.OS === 'ios' ? 'light-content' : 'light-content'} backgroundColor="#007bff" />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

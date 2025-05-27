@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "What is the difference between ref and out parameters in C#?",
+    "answer": "ref requires the variable to be initialized before being passed; out does not, but must be assigned before the method returns."
+  },
+  {
+    "id": 2,
+    "question": "What is the purpose of async and await in C#?",
+    "answer": "They enable asynchronous programming by allowing non-blocking calls, improving responsiveness and performance."
+  },
+  {
+    "id": 3,
+    "question": "What is the difference between interface and abstract class?",
+    "answer": "An interface cannot contain implementation; an abstract class can. A class can implement multiple interfaces but inherit from only one class."
+  },
+  {
+    "id": 4,
+    "question": "What is the difference between == and .Equals() in C#?",
+    "answer": "== checks reference equality by default (unless overloaded); .Equals() checks value equality (can be overridden)."
+  },
+  {
+    "id": 5,
+    "question": "What is boxing and unboxing in C#?",
+    "answer": "Boxing is converting a value type to object; Unboxing is extracting the value type from object."
+  },
+  {
+    "id": 6,
+    "question": "What is a nullable type and how is it declared?",
+    "answer": "A type that can hold null; declared as int?, bool?, etc."
+  },
+  {
+    "id": 7,
+    "question": "What is the purpose of the using statement?",
+    "answer": "Ensures the correct disposal of IDisposable objects, such as streams or database connections."
+  },
+  {
+    "id": 8,
+    "question": "What does the var keyword do in C#?",
+    "answer": "Enables implicit typing. The type is inferred by the compiler at compile time."
+  },
+  {
+    "id": 9,
+    "question": "What is a delegate in C#?",
+    "answer": "A type-safe function pointer that can reference methods with a specific signature."
+  },
+  {
+    "id": 10,
+    "question": "What is the difference between Task and Thread?",
+    "answer": "Task is part of the TPL and is optimized for async programming; Thread is lower-level and more resource-intensive."
+  }
+] 
