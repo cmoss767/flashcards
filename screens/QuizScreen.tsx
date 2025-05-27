@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Platform, StatusBar, ActivityIndicator } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../App'; // We will define this in App.tsx
+import { RootStackParamList } from '../App';
 
 interface QuizItem {
   id: number;
@@ -31,16 +31,12 @@ const QuizScreen: React.FC<Props> = ({ route, navigation }) => {
       setIsLoading(true);
       setError(null);
       try {
-        // Dynamically import the JSON file for the topic
-        // Note: Metro bundler needs to be able to statically analyze this import.
-        // More complex dynamic paths might require a different approach (e.g., a helper function or a map).
         let topicData;
         if (topicFile === 'csharp.json') {
           topicData = require('../data/topics/csharp.json');
         } else if (topicFile === 'javascript.json') {
           topicData = require('../data/topics/javascript.json');
         }
-        // Add more else if blocks here for other topics
         else {
           throw new Error(`Unknown topic file: ${topicFile}`);
         }
@@ -55,7 +51,6 @@ const QuizScreen: React.FC<Props> = ({ route, navigation }) => {
     };
 
     loadQuestions();
-    // Set the title of the screen to the topic name
     navigation.setOptions({ title: `${topicName} Quiz` });
 
   }, [topicId, topicName, topicFile, navigation]);
@@ -142,10 +137,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f5f5f5',
     alignItems: 'center',
-    justifyContent: 'space-around', // Adjusted for better spacing
+    justifyContent: 'space-around',
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     paddingHorizontal: 20,
-    paddingBottom: 20, // Added padding at the bottom
+    paddingBottom: 20,
   },
   containerCentered: {
     flex: 1,
@@ -156,16 +151,16 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: '#fff',
-    borderRadius: 15, // Slightly more rounded corners
+    borderRadius: 15,
     padding: 25,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 }, // Increased shadow offset
-    shadowOpacity: 0.15, // Subtler shadow
-    shadowRadius: 6, // Softer shadow
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
     elevation: 8,
     width: '100%',
-    maxWidth: 450, // Slightly larger max width
-    minHeight: 250, // Slightly taller card
+    maxWidth: 450,
+    minHeight: 250,
     justifyContent: 'space-between',
   },
   cardContent: {
@@ -174,21 +169,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 22, // Kept font size
+    fontSize: 22,
     textAlign: 'center',
     color: '#333',
-    paddingHorizontal: 5, // Ensure text does not touch edges
+    paddingHorizontal: 5,
   },
   questionNumber: {
     fontSize: 16,
-    color: '#555', // Slightly darker gray
+    color: '#555',
     textAlign: 'left',
     marginBottom: 15,
   },
   buttonContainer: {
     flexDirection: 'row',
-    marginTop: 20, // Adjusted margin
-    justifyContent: 'space-between', // Use space-between for full width usage
+    marginTop: 20,
+    justifyContent: 'space-between',
     width: '100%',
     maxWidth: 450,
   },
@@ -196,9 +191,9 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderRadius: 10,
-    marginHorizontal: 5, // Reduced margin as space-between is used
+    marginHorizontal: 5,
     alignItems: 'center',
-    flexGrow: 1, // Allow buttons to grow
+    flexGrow: 1,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
@@ -206,10 +201,10 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   flipButton: {
-    backgroundColor: '#28a745', // Green for flip/show answer
+    backgroundColor: '#28a745',
   },
   nextButton: {
-    backgroundColor: '#007bff', // Blue for next
+    backgroundColor: '#007bff',
   },
   buttonText: {
     color: '#fff',

@@ -1,13 +1,11 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, FlatList } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../App'; // We will define this in App.tsx
+import { RootStackParamList } from '../App';
 
-// Define the topics - in a real app, you might fetch this list or scan the data/topics directory
 const TOPICS = [
   { id: 'csharp', name: 'C#', file: 'csharp.json' },
   { id: 'javascript', name: 'JavaScript', file: 'javascript.json' },
-  // Add more topics here as you create their JSON files
 ];
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
@@ -59,12 +57,12 @@ const styles = StyleSheet.create({
   },
   topicButton: {
     backgroundColor: '#007bff',
-    paddingVertical: 18, // Increased padding
-    paddingHorizontal: 30, // Increased padding
-    borderRadius: 10, // Smoother corners
+    paddingVertical: 18,
+    paddingHorizontal: 30,
+    borderRadius: 10,
     marginVertical: 10,
     width: '80%',
-    maxWidth: 300, // Max width for buttons
+    maxWidth: 300,
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -74,7 +72,7 @@ const styles = StyleSheet.create({
   },
   topicButtonText: {
     color: '#fff',
-    fontSize: 18, // Increased font size
+    fontSize: 18,
     fontWeight: '600',
   },
 });
