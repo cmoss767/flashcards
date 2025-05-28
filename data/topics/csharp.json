@@ -48,5 +48,55 @@
     "id": 10,
     "question": "What is the difference between Task and Thread?",
     "answer": "Task is part of the TPL and is optimized for async programming; Thread is lower-level and more resource-intensive."
+  },
+  {
+    "id": 11,
+    "question": "What is LINQ in C#?",
+    "answer": "LINQ (Language Integrated Query) allows querying collections using SQL-like syntax directly in C#."
+  },
+  {
+    "id": 12,
+    "question": "What is the difference between IEnumerable and IQueryable?",
+    "answer": "IEnumerable executes queries in memory; IQueryable builds an expression tree for execution by a data source like a database."
+  },
+  {
+    "id": 13,
+    "question": "What is the Repository Pattern?",
+    "answer": "An abstraction layer between the data access and business logic layers, providing a centralized way to manage data."
+  },
+  {
+    "id": 14,
+    "question": "What is the Unit of Work pattern?",
+    "answer": "Manages multiple repositories under a single transaction to ensure atomic operations."
+  },
+  {
+    "id": 15,
+    "question": "What is the difference between Func, Action, and Predicate?",
+    "answer": "Func<T> returns a value\n\nAction<T> returns void\n\nPredicate<T> returns a bool"
+  },
+  {
+    "id": 16,
+    "question": "What is Entity Framework (EF)?",
+    "answer": "An ORM (Object-Relational Mapper) that lets you interact with a database using C# objects instead of SQL."
+  },
+  {
+    "id": 17,
+    "question": "What is the difference between Add, AddAsync, SaveChanges, and SaveChangesAsync in EF?",
+    "answer": "Add/AddAsync: Add entities to the context\n\nSaveChanges/SaveChangesAsync: Commit changes to the database"
+  },
+  {
+    "id": 18,
+    "question": "What is lazy loading in EF Core?",
+    "answer": "It delays the loading of related data until it is accessed, improving performance when not all related data is needed."
+  },
+  {
+    "id": 19,
+    "question": "What are value types and reference types in C#?",
+    "answer": "Value types (e.g., int, struct) store data directly\n\nReference types (e.g., class, string) store a reference to the data"
+  },
+  {
+    "id": 20,
+    "question": "What is dependency injection?",
+    "answer": "A design pattern where dependencies are provided to a class, rather than being created by the class, promoting loose coupling."
   }
 ] 
