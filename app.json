@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "my-expo-app",
+    "name": "CodeDeck",
     "slug": "my-expo-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,6 +13,7 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "icon": "./assets/icon.png",
       "supportsTablet": true,
       "bundleIdentifier": "com.cmoss767.myexpoapp",
       "infoPlist": {
